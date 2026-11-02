@@ -90,7 +90,7 @@ export default function App() {
               {/* ২. প্রধান অতিথি */}
               <SpeakerCard
                 role="প্রধান অতিথি"
-                name="প্লেবয় সাকিক, সাবেক সিআর। (cuckold)"
+                name="প্লেবয় সাকিক, সাবেক সিআর। (cuckold),পাবনা"
                 imageSrc="/images/guest.jpg"
                 fallbackSrcs={[
                   "/images/guest.png",
@@ -106,7 +106,7 @@ export default function App() {
               {/* ৩. বিশেষ বক্তা */}
               <SpeakerCard
                 role="বিশেষ বক্তা"
-                name="গক গক আবির"
+                name="গক গক আবির (ডেমরা,ঢাকা)"
                 imageSrc="/images/special_speaker.jpg"
                 fallbackSrcs={[
                   "/images/special_speaker.png",
@@ -124,7 +124,7 @@ export default function App() {
               {/* ৪. সঞ্চালক */}
               <SpeakerCard
                 role="সঞ্চালক"
-                name="মুক্তিযোদ্ধা নাফিজ"
+                name="মুক্তিযোদ্ধা নাফিজ (কুষ্টিয়া)"
                 imageSrc="/images/moderator.jpg"
                 fallbackSrcs={[
                   "/images/moderator.png",
@@ -142,7 +142,7 @@ export default function App() {
               {/* ৫. সভাপতি */}
               <SpeakerCard
                 role="সভাপতি"
-                name="কামলা রোমান (ACR)"
+                name="কামলা রোমান (ACR),মাগুরা"
                 imageSrc="/images/president.jpg"
                 fallbackSrcs={[
                   "/images/Messenger_creation_DE3A8D03-68FE-4C09-B0E4-4E5D328604E9.jpeg",
@@ -157,7 +157,7 @@ export default function App() {
               {/* ৬. অর্থদাতা */}
               <SpeakerCard
                 role="অর্থদাতা"
-                name="চাঁদাবাজ আলভি"
+                name="চাঁদাবাজ আলভি (রাজশাহী)"
                 imageSrc="/images/donor.jpg"
                 fallbackSrcs={[
                   "/images/IMG-20260908-WA0018.jpeg",
