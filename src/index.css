@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #020c08;
+    color: #fbf5e2;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Islamic Geometric Background Pattern */
+.islamic-pattern {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.islamic-lattice {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(212, 175, 55, 0.03) 0,
+    rgba(212, 175, 55, 0.03) 1px,
+    transparent 0,
+    transparent 50%
+  ),
+  repeating-linear-gradient(
+    -45deg,
+    rgba(212, 175, 55, 0.03) 0,
+    rgba(212, 175, 55, 0.03) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 40px 40px;
+}
+
+/* Bengali Typography & Matra Safeguards */
+.font-serifBangla,
+.font-sansBangla {
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* Metallic Gold Text with Full Clearance for Bengali Matras / Ascenders */
+.gold-text-shimmer {
+  display: inline-block;
+  background: linear-gradient(135deg, #fff7d6 0%, #eec765 30%, #d4af37 60%, #fff0b8 80%, #aa8222 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+  padding-top: 0.3em;
+  padding-bottom: 0.25em;
+  line-height: 1.45;
+  overflow: visible;
+}
+
+.gold-sub-shimmer {
+  display: inline-block;
+  background: linear-gradient(135deg, #fdf5df 0%, #deb853 50%, #f6e6be 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  line-height: 1.4;
+  overflow: visible;
+}
+
+/* Glass Card */
+.glass-panel {
+  background: linear-gradient(145deg, rgba(7, 46, 35, 0.65) 0%, rgba(4, 26, 19, 0.75) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 235, 170, 0.15);
+}
+
+.glass-panel:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 175, 55, 0.18), inset 0 1px 0 rgba(255, 235, 170, 0.25);
+}
+
+/* Ornamental Golden Corner Accents */
+.ornament-corner-tl {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 24px;
+  height: 24px;
+  border-top: 2px solid #d4af37;
+  border-left: 2px solid #d4af37;
+  pointer-events: none;
+}
+
+.ornament-corner-tr {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 24px;
+  height: 24px;
+  border-top: 2px solid #d4af37;
+  border-right: 2px solid #d4af37;
+  pointer-events: none;
+}
+
+.ornament-corner-bl {
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  width: 24px;
+  height: 24px;
+  border-bottom: 2px solid #d4af37;
+  border-left: 2px solid #d4af37;
+  pointer-events: none;
+}
+
+.ornament-corner-br {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 24px;
+  height: 24px;
+  border-bottom: 2px solid #d4af37;
+  border-right: 2px solid #d4af37;
+  pointer-events: none;
+}
+
+/* Fade-in and entrance animations */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInScale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
