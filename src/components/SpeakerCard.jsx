@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CornerOrnament, IslamicStar } from './IslamicOrnaments';
-import { Mic, Award, Sparkles, Radio, User } from 'lucide-react';
+import { Mic, Award, Sparkles, Radio, Crown, Coins, User } from 'lucide-react';
 
 export const SpeakerCard = ({ 
   role, 
@@ -44,6 +44,10 @@ export const SpeakerCard = ({
         return <Sparkles className="w-3.5 h-3.5 text-gold-300 flex-shrink-0" aria-hidden="true" />;
       case 'moderator':
         return <Radio className="w-3.5 h-3.5 text-gold-300 flex-shrink-0" aria-hidden="true" />;
+      case 'president':
+        return <Crown className="w-3.5 h-3.5 text-gold-300 flex-shrink-0" aria-hidden="true" />;
+      case 'donor':
+        return <Coins className="w-3.5 h-3.5 text-gold-300 flex-shrink-0" aria-hidden="true" />;
       default:
         return <Mic className="w-3.5 h-3.5 text-gold-300 flex-shrink-0" aria-hidden="true" />;
     }

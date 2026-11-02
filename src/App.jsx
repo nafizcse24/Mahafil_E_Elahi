@@ -90,7 +90,7 @@ export default function App() {
               {/* ২. প্রধান অতিথি */}
               <SpeakerCard
                 role="প্রধান অতিথি"
-                name="প্লেবয় সাকিক, সাবেক সিআর।"
+                name="প্লেবয় সাকিক, সাবেক সিআর। (cuckold)"
                 imageSrc="/images/guest.jpg"
                 fallbackSrcs={[
                   "/images/guest.png",
@@ -137,6 +137,36 @@ export default function App() {
                 ]}
                 isPrimary={false}
                 iconType="moderator"
+              />
+
+              {/* ৫. সভাপতি */}
+              <SpeakerCard
+                role="সভাপতি"
+                name="লাল পড়া রোমান"
+                imageSrc="/images/president.jpg"
+                fallbackSrcs={[
+                  "/images/Messenger_creation_DE3A8D03-68FE-4C09-B0E4-4E5D328604E9.jpeg",
+                  "/images/roman.jpg",
+                  "/images/president.png",
+                  "/images/shovapoti.jpg"
+                ]}
+                isPrimary={false}
+                iconType="president"
+              />
+
+              {/* ৬. অর্থদাতা */}
+              <SpeakerCard
+                role="অর্থদাতা"
+                name="চাঁদাবাজ আলভি"
+                imageSrc="/images/donor.jpg"
+                fallbackSrcs={[
+                  "/images/IMG-20260908-WA0018.jpeg",
+                  "/images/alvi.jpg",
+                  "/images/donor.png",
+                  "/images/orthodota.jpg"
+                ]}
+                isPrimary={false}
+                iconType="donor"
               />
 
             </div>
