@@ -1,10 +1,98 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IslamicStar, ArabesqueDivider, HangingLantern, IslamicCrest } from './components/IslamicOrnaments';
 import { SpeakerCard } from './components/SpeakerCard';
 import { Countdown } from './components/Countdown';
 import { EventVenue } from './components/EventVenue';
+import { PosterModal } from './components/PosterModal';
+import { Download, Sparkles } from 'lucide-react';
 
 export default function App() {
+  const [isPosterOpen, setIsPosterOpen] = useState(false);
+
+  const speakers = [
+    {
+      role: "প্রধান বক্তা",
+      name: "পীরে কামেল সামিউল ইসলাম কিশোরগঞ্জী বাবাজান।",
+      imageSrc: "/images/speaker.jpg",
+      fallbackSrcs: [
+        "/images/speaker.png",
+        "/images/speaker.jpeg",
+        "/images/speaker.webp",
+        "/images/pradhan_bokta.jpg"
+      ],
+      isPrimary: true,
+      iconType: "speaker"
+    },
+    {
+      role: "প্রধান অতিথি",
+      name: "প্লেবয় সাকিক, সাবেক সিআর। (cuckold),পাবনা",
+      imageSrc: "/images/guest.jpg",
+      fallbackSrcs: [
+        "/images/guest.png",
+        "/images/guest.jpeg",
+        "/images/guest.webp",
+        "/images/pradhan_otiti.jpg"
+      ],
+      isPrimary: false,
+      iconType: "guest"
+    },
+    {
+      role: "বিশেষ বক্তা",
+      name: "গক গক আবির (ডেমরা,ঢাকা)",
+      imageSrc: "/images/special_speaker.jpg",
+      fallbackSrcs: [
+        "/images/special_speaker.png",
+        "/images/special_speaker.jpeg",
+        "/images/special_speaker.webp",
+        "/images/bishesh_bokta.jpg",
+        "/images/abir.jpg"
+      ],
+      isPrimary: false,
+      iconType: "special_speaker"
+    },
+    {
+      role: "সঞ্চালক",
+      name: "মুক্তিযোদ্ধা নাফিজ (কুষ্টিয়া)",
+      imageSrc: "/images/moderator.jpg",
+      fallbackSrcs: [
+        "/images/moderator.png",
+        "/images/moderator.jpeg",
+        "/images/moderator.webp",
+        "/images/sanchalok.jpg",
+        "/images/nafiz.jpg"
+      ],
+      isPrimary: false,
+      iconType: "moderator"
+    },
+    {
+      role: "সভাপতি",
+      name: "কামলা রোমান (ACR),মাগুরা",
+      imageSrc: "/images/roman.jpg",
+      fallbackSrcs: [
+        "/images/president.jpg",
+        "/images/Messenger_creation_DE3A8D03-68FE-4C09-B0E4-4E5D328604E9.jpeg",
+        "/images/roman.png",
+        "/images/shovapoti.jpg"
+      ],
+      isPrimary: false,
+      iconType: "president"
+    },
+    {
+      role: "অর্থদাতা",
+      name: "চাঁদাবাজ আলভি (রাজশাহী)",
+      imageSrc: "/images/alvi.png",
+      fallbackSrcs: [
+        "/images/donor.jpg",
+        "/images/IMG-20260908-WA0018.jpeg",
+        "/images/alvi.jpg",
+        "/images/donor.png",
+        "/images/orthodota.jpg"
+      ],
+      isPrimary: false,
+      iconType: "donor"
+    }
+  ];
+
   return (
     <main className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-x-hidden bg-[#020b07] text-[#fbf5e2] selection:bg-gold-500/30 selection:text-[#fff9e6] py-6 sm:py-10 px-3 sm:px-6 lg:px-8">
       
@@ -59,116 +147,41 @@ export default function App() {
               </p>
               <IslamicStar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 hidden sm:block flex-shrink-0" />
             </div>
+
+            {/* 4:5 Poster Creator Action Button */}
+            <div className="mt-4 mb-1 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setIsPosterOpen(true)}
+                className="group relative inline-flex items-center gap-2 px-5 py-2 sm:px-6 sm:py-2.5 rounded-full bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 hover:from-gold-400 hover:to-gold-300 text-emerald-950 font-bold text-xs sm:text-sm font-serifBangla shadow-[0_4px_20px_rgba(212,175,55,0.35)] hover:shadow-[0_6px_30px_rgba(212,175,55,0.55)] transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
+              >
+                <Sparkles className="w-4 h-4 text-emerald-950 group-hover:rotate-12 transition-transform" />
+                <span>৪:৫ পোস্টার তৈরি ও ডাউনলোড</span>
+                <Download className="w-4 h-4 text-emerald-950 group-hover:translate-y-0.5 transition-transform" />
+              </button>
+            </div>
           </header>
 
           {/* Divider */}
           <ArabesqueDivider className="my-4 sm:my-6" />
 
-          {/* Speakers Section: 4 Glass Cards (2 columns on desktop, stacked on mobile) */}
+          {/* Speakers Section: 6 Glass Cards (2 columns on desktop, stacked on mobile) */}
           <section 
             aria-label="সম্মানিত ব্যক্তিবর্গ" 
             className="w-full my-3 sm:my-5"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 max-w-4xl mx-auto items-stretch">
-              
-              {/* ১. প্রধান বক্তা */}
-              <SpeakerCard
-                role="প্রধান বক্তা"
-                name="পীরে কামেল সামিউল ইসলাম কিশোরগঞ্জী বাবাজান।"
-                imageSrc="/images/speaker.jpg"
-                fallbackSrcs={[
-                  "/images/speaker.png",
-                  "/images/speaker.jpeg",
-                  "/images/speaker.webp",
-                  "/images/pradhan_bokta.jpg",
-                  "/images/pradhan_bokta.png"
-                ]}
-                isPrimary={true}
-                iconType="speaker"
-              />
-
-              {/* ২. প্রধান অতিথি */}
-              <SpeakerCard
-                role="প্রধান অতিথি"
-                name="প্লেবয় সাকিক, সাবেক সিআর। (cuckold),পাবনা"
-                imageSrc="/images/guest.jpg"
-                fallbackSrcs={[
-                  "/images/guest.png",
-                  "/images/guest.jpeg",
-                  "/images/guest.webp",
-                  "/images/pradhan_otiti.jpg",
-                  "/images/pradhan_otiti.png"
-                ]}
-                isPrimary={false}
-                iconType="guest"
-              />
-
-              {/* ৩. বিশেষ বক্তা */}
-              <SpeakerCard
-                role="বিশেষ বক্তা"
-                name="গক গক আবির (ডেমরা,ঢাকা)"
-                imageSrc="/images/special_speaker.jpg"
-                fallbackSrcs={[
-                  "/images/special_speaker.png",
-                  "/images/special_speaker.jpeg",
-                  "/images/special_speaker.webp",
-                  "/images/bishesh_bokta.jpg",
-                  "/images/bishesh_bokta.png",
-                  "/images/abir.jpg",
-                  "/images/abir.png"
-                ]}
-                isPrimary={false}
-                iconType="special_speaker"
-              />
-
-              {/* ৪. সঞ্চালক */}
-              <SpeakerCard
-                role="সঞ্চালক"
-                name="মুক্তিযোদ্ধা নাফিজ (কুষ্টিয়া)"
-                imageSrc="/images/moderator.jpg"
-                fallbackSrcs={[
-                  "/images/moderator.png",
-                  "/images/moderator.jpeg",
-                  "/images/moderator.webp",
-                  "/images/sanchalok.jpg",
-                  "/images/sanchalok.png",
-                  "/images/nafiz.jpg",
-                  "/images/nafiz.png"
-                ]}
-                isPrimary={false}
-                iconType="moderator"
-              />
-
-              {/* ৫. সভাপতি */}
-              <SpeakerCard
-                role="সভাপতি"
-                name="কামলা রোমান (ACR),মাগুরা"
-                imageSrc="/images/president.jpg"
-                fallbackSrcs={[
-                  "/images/Messenger_creation_DE3A8D03-68FE-4C09-B0E4-4E5D328604E9.jpeg",
-                  "/images/roman.jpg",
-                  "/images/president.png",
-                  "/images/shovapoti.jpg"
-                ]}
-                isPrimary={false}
-                iconType="president"
-              />
-
-              {/* ৬. অর্থদাতা */}
-              <SpeakerCard
-                role="অর্থদাতা"
-                name="চাঁদাবাজ আলভি (রাজশাহী)"
-                imageSrc="/images/donor.jpg"
-                fallbackSrcs={[
-                  "/images/IMG-20260908-WA0018.jpeg",
-                  "/images/alvi.png",
-                  "/images/donor.png",
-                  "/images/orthodota.jpg"
-                ]}
-                isPrimary={false}
-                iconType="donor"
-              />
-
+              {speakers.map((s, idx) => (
+                <SpeakerCard
+                  key={idx}
+                  role={s.role}
+                  name={s.name}
+                  imageSrc={s.imageSrc}
+                  fallbackSrcs={s.fallbackSrcs}
+                  isPrimary={s.isPrimary}
+                  iconType={s.iconType}
+                />
+              ))}
             </div>
           </section>
 
@@ -187,6 +200,27 @@ export default function App() {
         </div>
 
       </div>
+
+      {/* Floating Action Button (Quick Poster Download) */}
+      <div className="fixed bottom-5 right-5 z-40 animate-fade-in">
+        <button
+          type="button"
+          onClick={() => setIsPosterOpen(true)}
+          className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 text-emerald-950 font-bold text-xs sm:text-sm font-serifBangla shadow-[0_6px_25px_rgba(212,175,55,0.5)] hover:shadow-[0_8px_35px_rgba(212,175,55,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 border border-gold-300"
+          aria-label="৪:৫ পোস্টার তৈরি ও ডাউনলোড করুন"
+        >
+          <Download className="w-4 h-4 text-emerald-950" />
+          <span className="hidden sm:inline">৪:৫ পোস্টার</span>
+          <span className="sm:hidden">পোস্টার</span>
+        </button>
+      </div>
+
+      {/* 4:5 Poster Modal */}
+      <PosterModal
+        isOpen={isPosterOpen}
+        onClose={() => setIsPosterOpen(false)}
+        speakers={speakers}
+      />
 
     </main>
   );
