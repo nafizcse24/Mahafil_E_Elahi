@@ -166,7 +166,7 @@ export const PosterTemplate = forwardRef(({ speakers: customSpeakers }, ref) => 
               </span>
             </div>
             <p className="text-lg font-bold text-[#fff4d6] font-serifBangla leading-tight">
-              লালা পড়া রোমানের কার্যালয়
+              কামলা রোমান এর কার্যালয়
             </p>
           </div>
         </footer>
