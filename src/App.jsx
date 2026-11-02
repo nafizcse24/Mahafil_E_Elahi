@@ -124,7 +124,7 @@ export default function App() {
               {/* ৪. সঞ্চালক */}
               <SpeakerCard
                 role="সঞ্চালক"
-                name="মুক্তিযুদ্ধা নাফিজ"
+                name="মুক্তিযোদ্ধা নাফিজ"
                 imageSrc="/images/moderator.jpg"
                 fallbackSrcs={[
                   "/images/moderator.png",
