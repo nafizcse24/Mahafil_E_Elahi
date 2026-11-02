@@ -54,17 +54,17 @@ export const PosterTemplate = forwardRef(({ speakers: customSpeakers }, ref) => 
     <div
       ref={ref}
       style={{ width: '800px', height: '1000px', minWidth: '800px', minHeight: '1000px' }}
-      className="relative flex flex-col justify-between bg-gradient-to-b from-[#031710] via-[#020e0a] to-[#010805] text-[#fbf5e2] p-7 overflow-hidden select-none"
+      className="relative flex flex-col justify-between bg-gradient-to-b from-[#031710] via-[#020e0a] to-[#010805] text-[#fbf5e2] p-6 overflow-hidden select-none"
     >
       {/* Background Lattice Pattern */}
       <div className="absolute inset-0 pointer-events-none islamic-lattice opacity-40" aria-hidden="true" />
       
       {/* Radial Gold & Emerald Glows */}
-      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[520px] h-[320px] bg-gold-500/20 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[500px] h-[280px] bg-emerald-600/20 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute top-14 left-1/2 -translate-x-1/2 w-[540px] h-[320px] bg-gold-500/20 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[520px] h-[280px] bg-emerald-600/20 rounded-full blur-[90px] pointer-events-none" />
 
       {/* Main Gilded Frame & Border */}
-      <div className="relative w-full h-full flex flex-col justify-between rounded-2xl border-2 border-gold-500/40 p-6 bg-gradient-to-b from-[#05281e]/85 via-[#02150f]/92 to-[#010c08]/96 shadow-[0_0_50px_rgba(0,0,0,0.85),inset_0_0_25px_rgba(212,175,55,0.18)]">
+      <div className="relative w-full h-full flex flex-col justify-between rounded-2xl border-2 border-gold-500/40 p-5 bg-gradient-to-b from-[#05281e]/85 via-[#02150f]/92 to-[#010c08]/96 shadow-[0_0_50px_rgba(0,0,0,0.85),inset_0_0_25px_rgba(212,175,55,0.18)]">
         
         {/* 4 Corner Ornaments */}
         <CornerOrnament position="tl" />
@@ -96,7 +96,7 @@ export const PosterTemplate = forwardRef(({ speakers: customSpeakers }, ref) => 
           </div>
 
           {/* Date & Time Badge (5 November 2026, 8:00 PM) */}
-          <div className="mt-2.5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/90 border border-gold-500/40 text-gold-200 text-xs font-sansBangla shadow-sm whitespace-nowrap">
+          <div className="mt-2 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/90 border border-gold-500/40 text-gold-200 text-xs font-sansBangla shadow-sm whitespace-nowrap">
             <Calendar className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
             <span>৫ নভেম্বর ২০২৬, রাত ৮:০০ টা (বাংলাদেশ সময়)</span>
           </div>
@@ -109,17 +109,21 @@ export const PosterTemplate = forwardRef(({ speakers: customSpeakers }, ref) => 
           <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gold-500/50 to-gold-400" />
         </div>
 
-        {/* 6 Profiles Grid (3 rows x 2 columns) */}
-        <div className="grid grid-cols-2 gap-x-5 gap-y-3.5 px-1 flex-1 items-center">
+        {/* 6 Profiles Grid (3 rows x 2 columns) - MAXIMUM PROPORTIONED CARDS & PICTURES */}
+        <div className="grid grid-cols-2 gap-x-4 gap-y-3.5 px-0.5 flex-1 items-center">
           {speakers.map((s, idx) => (
             <div
               key={idx}
-              className="relative flex items-center gap-3.5 p-3 rounded-2xl bg-gradient-to-r from-[#063023]/85 to-[#021811]/85 border border-gold-500/35 backdrop-blur-md shadow-sm h-[94px]"
+              className={`relative flex items-center gap-4 p-3.5 rounded-2xl bg-gradient-to-r from-[#063225]/95 via-[#032219]/95 to-[#021912]/95 border border-gold-500/40 backdrop-blur-md shadow-[0_6px_25px_rgba(0,0,0,0.5)] h-[148px] ${s.isPrimary ? 'ring-1 ring-gold-400/50' : ''}`}
             >
-              {/* Circular Portrait Frame */}
+              {/* Corner Filigree on Card */}
+              <div className="absolute top-1.5 left-1.5 w-3 h-3 border-t-2 border-l-2 border-gold-400/40 rounded-tl-sm pointer-events-none" />
+              <div className="absolute bottom-1.5 right-1.5 w-3 h-3 border-b-2 border-r-2 border-gold-400/40 rounded-br-sm pointer-events-none" />
+
+              {/* Extra Large Circular Portrait Frame */}
               <div className="relative flex-shrink-0">
-                <div className={`rounded-full p-[2px] bg-gradient-to-tr from-gold-500 via-gold-300 to-gold-700 ${s.isPrimary ? 'w-[72px] h-[72px] shadow-[0_0_15px_rgba(212,175,55,0.45)]' : 'w-[66px] h-[66px] shadow-[0_0_10px_rgba(212,175,55,0.25)]'}`}>
-                  <div className="w-full h-full rounded-full overflow-hidden bg-[#03150f] border border-gold-400/40">
+                <div className={`rounded-full p-[2.5px] bg-gradient-to-tr from-gold-500 via-gold-300 to-gold-700 ${s.isPrimary ? 'w-[118px] h-[118px] shadow-[0_0_22px_rgba(212,175,55,0.55)]' : 'w-[110px] h-[110px] shadow-[0_0_16px_rgba(212,175,55,0.38)]'}`}>
+                  <div className="w-full h-full rounded-full overflow-hidden bg-[#03150f] border-2 border-gold-400/50">
                     <img
                       src={s.image || s.imageSrc}
                       alt={s.name}
@@ -129,15 +133,15 @@ export const PosterTemplate = forwardRef(({ speakers: customSpeakers }, ref) => 
                 </div>
               </div>
 
-              {/* Text Info (no truncation ellipsis, full names displayed with clean wrapping) */}
-              <div className="flex flex-col min-w-0 flex-1 justify-center">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gold-950/80 border border-gold-400/50 w-max mb-1">
+              {/* Text Info */}
+              <div className="flex flex-col min-w-0 flex-1 justify-center pr-1">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-950/90 border border-gold-400/60 w-max mb-1.5 shadow-sm">
                   {s.icon}
-                  <span className="text-[0.68rem] font-bold text-gold-200 font-serifBangla">
+                  <span className="text-[0.76rem] font-bold text-gold-200 font-serifBangla">
                     {s.role}
                   </span>
                 </div>
-                <h3 className="text-[0.86rem] font-bold text-[#fff7df] font-serifBangla leading-snug line-clamp-2">
+                <h3 className="text-[1.02rem] font-bold text-[#fff9e6] font-serifBangla leading-snug line-clamp-2 drop-shadow-sm">
                   {s.name}
                 </h3>
               </div>
