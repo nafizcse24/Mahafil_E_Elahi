@@ -40,7 +40,7 @@ export const EventVenue = () => {
         {/* Venue Location Text */}
         <div className="mt-1 sm:mt-2 px-2">
           <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#fff5db] font-serifBangla tracking-wide leading-relaxed py-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] group-hover:text-gold-100 transition-colors">
-            লাল পড়া রোমানের কার্যালয়
+            কামলা রোমান এর কার্যালয়
           </p>
         </div>
 

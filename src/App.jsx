@@ -124,7 +124,7 @@ export default function App() {
               {/* ৪. সঞ্চালক */}
               <SpeakerCard
                 role="সঞ্চালক"
-                name="নাফিজ বাবা"
+                name="মুক্তিযুদ্ধা নাফিজ"
                 imageSrc="/images/moderator.jpg"
                 fallbackSrcs={[
                   "/images/moderator.png",
@@ -142,7 +142,7 @@ export default function App() {
               {/* ৫. সভাপতি */}
               <SpeakerCard
                 role="সভাপতি"
-                name="লাল পড়া রোমান"
+                name="কামলা রোমান (ACR)"
                 imageSrc="/images/president.jpg"
                 fallbackSrcs={[
                   "/images/Messenger_creation_DE3A8D03-68FE-4C09-B0E4-4E5D328604E9.jpeg",
