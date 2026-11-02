@@ -12,7 +12,7 @@ export default function App() {
   const speakers = [
     {
       role: "প্রধান বক্তা",
-      name: "পীরে কামেল সামিউল ইসলাম কিশোরগঞ্জী বাবাজান।",
+      name: "পীরে কামেল সামিউল ইসলাম অমিও কিশোরগঞ্জী বাবাজান।",
       imageSrc: "/images/speaker.jpg",
       fallbackSrcs: [
         "/images/speaker.png",
@@ -25,7 +25,7 @@ export default function App() {
     },
     {
       role: "প্রধান অতিথি",
-      name: "প্লেবয় সাকিক, সাবেক সিআর। (cuckold),পাবনা",
+      name: "প্লেবয় সাকিব, সাবেক সিআর। (cuckold),পাবনা",
       imageSrc: "/images/guest.jpg",
       fallbackSrcs: [
         "/images/guest.png",
