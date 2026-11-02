@@ -161,7 +161,7 @@ export default function App() {
                 imageSrc="/images/donor.jpg"
                 fallbackSrcs={[
                   "/images/IMG-20260908-WA0018.jpeg",
-                  "/images/alvi.jpg",
+                  "/images/alvi.png",
                   "/images/donor.png",
                   "/images/orthodota.jpg"
                 ]}
